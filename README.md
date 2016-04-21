@@ -140,6 +140,10 @@ to `app-deploy`
 ./push.sh (path to `app-deploy`)
 ```
 
+**If you want to deploy a new version of the application, you dont have to repeat
+all the previous steps. Just execute the last command.**
+
+
 
 ## Notes
 + For this guide, i copied a settings.json file `settings-prod.json` under 
