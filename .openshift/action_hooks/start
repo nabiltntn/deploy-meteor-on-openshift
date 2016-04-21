@@ -1,0 +1,20 @@
+#!/bin/bash
+# The logic to start up your application should be put in this
+# script. The application will work only if it binds to
+# $OPENSHIFT_DIY_IP:8080
+source "$OPENSHIFT_REPO_DIR/.openshift/lib/utils"
+_SHOW_SETUP_PATH_MESSAGES="true" setup_path_for_custom_node_version
+
+
+#Export production settings file as METEOR_SETTINGS
+echo "  - Export METEOR_SETTINGS env from settings-prod.json file ... "
+export METEOR_SETTINGS="$(cat ${OPENSHIFT_REPO_DIR}bundle/programs/server/assets/app/settings-prod.json)"
+
+echo "  - Add phantomjs cartridge bin folder to path ( required by spiderable package ) ... "
+export PATH=$PATH:~/casperjs/phantomjs/bin
+
+cd ${OPENSHIFT_REPO_DIR}
+
+
+nohup node meteorshim.js > ${OPENSHIFT_LOG_DIR}app_log.log 2> ${OPENSHIFT_LOG_DIR}app_err.log &
+
