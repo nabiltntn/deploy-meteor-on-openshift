@@ -160,3 +160,8 @@ If your application uses a different name, then you have to indicate it in
 + to access application logs, your need to use Openshift `rhc` client and use
 the `rhc tail APPLICATION_NAME` command. The application generates two files :
 `app_log.log` and `app_err.log`
++ If your openshift application uses custom domain name, you can change
+`ROOT_URL` env variable in `app-deploy\meteorshim.js`
+```js
+process.env.ROOT_URL = "http://YOUR_CUSTOM_DOMAIN" || "http://localhost";
+```
