@@ -26,7 +26,7 @@ Then, you need to add the follwing 'cartidiges' :
 + Cron 1.4 : to lunch so recurent tasks like checking application state
 + If your Meteor application uses Spiderable package to make it SEO friendly, you
 need PhantomJS to be installed with your Openshift application. Openshift does
-not provide it as cartidige, but it allows you to insall it via a URL,we will use 
+not provide it as cartidige, but it allows you to insall it via a URL,we will use
 this one : https://raw.githubusercontent.com/daniel-sc/casperjs-cartridge/master/metadata/manifest.yml
 
 ## 2. Clone your Openshift Repo on your machine
@@ -59,7 +59,13 @@ git clone https://github.com/nabiltntn/deploy-meteor-on-openshift.git app-diy
 
 Copy all the content of `app-diy`  ( except `.git/` folder ) on `app-deploy`
 
-Your can after that delete `app-diy` if you want. 
+CD to `app-deploy` and install dependencies :
+
+```sh
+npm install
+```
+
+Your can after that delete `app-diy` if you want.
 
 ## 4. Create a bash script on your Meteor app directory and copy/paste this script
 
@@ -98,7 +104,7 @@ echo "-> Clean repo from deleted files"
 git rm -r ${BUNDLE_EXTRACT_FOLDER}
 
 echo '-> Start extracting the application bundle to deploy project folder'
-tar -xvf ${BUNDLE_NAME} -s ${BUNDLE_EXTRACT_FOLDER}
+tar -xvf ${BUNDLE_NAME} ${BUNDLE_EXTRACT_FOLDER}
 
 echo '-> Delete the generated bundle'
 rm ${BUNDLE_NAME}
@@ -146,7 +152,7 @@ all the previous steps. Just execute the last command.**
 
 
 ## Notes
-+ For this guide, i copied a settings.json file `settings-prod.json` under 
++ For this guide, i copied a settings.json file `settings-prod.json` under
 private directory in my Meteor application. During the build process, this
 file is copied under `app-deploy/bundle/programs/server/assets/app/settings-prod.json`
 If your application uses a different name, then you have to indicate it in
