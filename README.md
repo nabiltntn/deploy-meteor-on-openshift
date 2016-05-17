@@ -156,8 +156,8 @@ all the previous steps. Just execute the last command.**
 private directory in my Meteor application. During the build process, this
 file is copied under `app-deploy/bundle/programs/server/assets/app/settings-prod.json`
 If your application uses a different name, then you have to indicate it in
-`app-deploy/.openshift/actions_hooks/star` file.
-+ to access application logs, your need to use Openshift `rhc` client and use
+`app-deploy/.openshift/actions_hooks/start` file.
++ To access application logs, your need to use Openshift `rhc` client and use
 the `rhc tail APPLICATION_NAME` command. The application generates two files :
 `app_log.log` and `app_err.log`
 + If your openshift application uses custom domain name, you can change
