@@ -19,9 +19,9 @@ to create your own.
 The first thing to do is to create an application on OpenShift. You need
 to use `Do-It-Yourself 0.1` which is a boileprate you can customize to make it
 support Meteor. Openshift creates a Git repository that you will clone on your
-machine to commit your Meteop app bundle on it.
+machine to commit your Meteor app bundle on it.
 
-Then, you need to add the follwing 'cartidiges' :
+Then, you need to add the following 'cartidiges' :
 + MongoDB 2.4
 + Cron 1.4 : to lunch so recurent tasks like checking application state
 + If your Meteor application uses Spiderable package to make it SEO friendly, you
@@ -35,7 +35,7 @@ You need to clone the repo on your machine, we will use for this guide
 ```sh
 git clone YOUR_REPO_URL app-deploy
 ```
-The initial content of the repo is the follwing :
+The initial content of the repo is the following :
 ```sh
 ls -al
 
