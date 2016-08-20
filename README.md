@@ -23,7 +23,7 @@ machine to commit your Meteor app bundle on it.
 
 Then, you need to add the following 'cartidiges' :
 + MongoDB 2.4
-+ Cron 1.4 : to lunch so recurent tasks like checking application state
++ Cron 1.4 : to lunch recurent tasks like checking application state
 + If your Meteor application uses Spiderable package to make it SEO friendly, you
 need PhantomJS to be installed with your Openshift application. Openshift does
 not provide it as cartidige, but it allows you to insall it via a URL,we will use
